@@ -205,10 +205,14 @@ void prediligenciarProductosDemo(int codigos[], int cantidades[], int & cantidad
     codigos[2] = 4;  // Sandwich
     cantidades[2] = 1;
 
-    cantidadItemsRegistrados = 3;
+    codigos[3] = 2;  // Capuccino
+    cantidades[3] = 3;
+
+    cantidadItemsRegistrados = 4;
 
     cout << "\nSe han cargado productos de ejemplo en el pedido:\n";
     cout << "- 2 Tintos\n";
     cout << "- 3 Pandebonos\n";
-    cout << "- 1 Sándwich\n\n";
+    cout << "- 1 Sándwich\n";
+    cout << "- 3 Capuccinos\n\n";
 }
