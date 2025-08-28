@@ -34,6 +34,11 @@ const int PRECIO_PANDEBONO = 3000;
  */
 const int PRECIO_SANDWICH = 8500;
 
+/**
+ * @brief Precio del producto Empanada.
+ */
+const int PRECIO_EMPANADA = 2500;
+
 // --- Descuentos (% expresado de 0.0 a 1.0) ---
 /**
  * @brief Descuento aplicado a estudiantes (10%).
@@ -56,6 +61,11 @@ const double DESCUENTO_VISITANTE = 0.00;
 const int MAX_ITEMS = 50;
 
 // --- Declaraciones de funciones ---
+
+/**
+ * @brief Muestra el precio más alto.
+ */
+void precioMayor();
 
 /**
  * @brief Muestra la carta de productos disponibles con sus precios.

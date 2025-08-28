@@ -3,6 +3,9 @@
 //
 #include "Cafe.h"
 
+void precioMayor() {
+
+}
 
 
 
@@ -13,16 +16,17 @@ void mostrarCartaProductos()
     cout << "2. Cappuccino  $" << PRECIO_CAPPUCCINO << "\n";
     cout << "3. Pandebono   $" << PRECIO_PANDEBONO << "\n";
     cout << "4. Sandwich    $" << PRECIO_SANDWICH << "\n";
+    cout << "5. Empanada    $" << PRECIO_EMPANADA << "\n";
 }
 
 int leerCodigoProducto()
 {
-    cout << "Ingrese el codigo del producto (1-4): ";
+    cout << "Ingrese el codigo del producto (1-5): ";
     int codigo;
     cin >> codigo;
-    while (codigo < 1 || codigo > 4)
+    while (codigo < 1 || codigo > 5)
     {
-        cout << "Codigo inválido. Intente de nuevo (1-4): ";
+        cout << "Codigo inválido. Intente de nuevo (1-5): ";
         cin.clear();
         cin.ignore(10000, '\n');
         cin >> codigo;
@@ -65,6 +69,11 @@ int obtenerPrecioPorCodigo(int codigoProducto)
         {
             return PRECIO_SANDWICH;
         }
+    case 5:
+       {
+            return PRECIO_EMPANADA;
+       }
+
     default:
         {
             return 0;
@@ -92,6 +101,10 @@ string obtenerNombreProducto(int codigoProducto)
         {
             return "Sándwich";
         }
+    case 5:
+    {
+            return "Empanada";
+    }
     default:
         {
             return "Desconocido";
