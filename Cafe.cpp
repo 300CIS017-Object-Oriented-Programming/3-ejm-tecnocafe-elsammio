@@ -3,8 +3,27 @@
 //
 #include "Cafe.h"
 
+#include <vector>
 
+void precioMayor() {
 
+    std::vector<string> nombres = {"Tinto", "Cappuccino", "Pandebono", "Sandwich", "Empanada"};
+    std::vector<double> precios = {PRECIO_TINTO, PRECIO_CAPPUCCINO, PRECIO_PANDEBONO, PRECIO_SANDWICH, PRECIO_EMPANADA};
+
+    // asumimos que el primero es el mayor
+    double mayor = precios[0];
+    string producto = nombres[0];
+
+    for (size_t i = 1; i < precios.size(); i++) {
+        if (precios[i] > mayor) {
+            mayor = precios[i];
+            producto = nombres[i];
+        }
+    }
+
+    cout << "\nEl producto más caro es: " << producto
+         << " con un precio de $" << mayor << endl;
+}
 
 void mostrarCartaProductos()
 {
@@ -13,16 +32,17 @@ void mostrarCartaProductos()
     cout << "2. Cappuccino  $" << PRECIO_CAPPUCCINO << "\n";
     cout << "3. Pandebono   $" << PRECIO_PANDEBONO << "\n";
     cout << "4. Sandwich    $" << PRECIO_SANDWICH << "\n";
+    cout << "5. Empanada    $" << PRECIO_EMPANADA << "\n";
 }
 
 int leerCodigoProducto()
 {
-    cout << "Ingrese el codigo del producto (1-4): ";
+    cout << "Ingrese el codigo del producto (1-5): ";
     int codigo;
     cin >> codigo;
-    while (codigo < 1 || codigo > 4)
+    while (codigo < 1 || codigo > 5)
     {
-        cout << "Codigo inválido. Intente de nuevo (1-4): ";
+        cout << "Codigo inválido. Intente de nuevo (1-5): ";
         cin.clear();
         cin.ignore(10000, '\n');
         cin >> codigo;
@@ -65,6 +85,11 @@ int obtenerPrecioPorCodigo(int codigoProducto)
         {
             return PRECIO_SANDWICH;
         }
+    case 5:
+       {
+            return PRECIO_EMPANADA;
+       }
+
     default:
         {
             return 0;
@@ -92,6 +117,10 @@ string obtenerNombreProducto(int codigoProducto)
         {
             return "Sándwich";
         }
+    case 5:
+    {
+            return "Empanada";
+    }
     default:
         {
             return "Desconocido";
@@ -205,10 +234,14 @@ void prediligenciarProductosDemo(int codigos[], int cantidades[], int & cantidad
     codigos[2] = 4;  // Sandwich
     cantidades[2] = 1;
 
-    cantidadItemsRegistrados = 3;
+    codigos[3] = 2;  // Capuccino
+    cantidades[3] = 3;
+
+    cantidadItemsRegistrados = 4;
 
     cout << "\nSe han cargado productos de ejemplo en el pedido:\n";
     cout << "- 2 Tintos\n";
     cout << "- 3 Pandebonos\n";
-    cout << "- 1 Sándwich\n\n";
+    cout << "- 1 Sándwich\n";
+    cout << "- 3 Capuccinos\n\n";
 }
