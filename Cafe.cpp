@@ -3,11 +3,27 @@
 //
 #include "Cafe.h"
 
+#include <vector>
+
 void precioMayor() {
 
+    std::vector<string> nombres = {"Tinto", "Cappuccino", "Pandebono", "Sandwich", "Empanada"};
+    std::vector<double> precios = {PRECIO_TINTO, PRECIO_CAPPUCCINO, PRECIO_PANDEBONO, PRECIO_SANDWICH, PRECIO_EMPANADA};
+
+    // asumimos que el primero es el mayor
+    double mayor = precios[0];
+    string producto = nombres[0];
+
+    for (size_t i = 1; i < precios.size(); i++) {
+        if (precios[i] > mayor) {
+            mayor = precios[i];
+            producto = nombres[i];
+        }
+    }
+
+    cout << "\nEl producto más caro es: " << producto
+         << " con un precio de $" << mayor << endl;
 }
-
-
 
 void mostrarCartaProductos()
 {

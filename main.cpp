@@ -70,6 +70,7 @@ int main()
 
         case 2:
             {
+
                 double subtotal = calcularSubtotalPedido(codigos, cantidades, cantidadItemsRegistrados);
                 cout << fixed << setprecision(2);
                 cout << "\nSubtotal actual: $" << subtotal << "\n\n";
